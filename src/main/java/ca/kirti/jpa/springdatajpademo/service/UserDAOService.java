@@ -1,6 +1,7 @@
 package ca.kirti.jpa.springdatajpademo.service;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -18,6 +19,7 @@ import ca.kirti.jpa.springdatajpademo.enity.User;
 @Transactional //ability to declaratively control transaction (open transaction, close transaction)
 public class UserDAOService {
 
+	@PersistenceContext //helps n tracking the entity
     private EntityManager entityManager;
 
     public long insert(User user) {
