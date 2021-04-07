@@ -19,7 +19,9 @@ import ca.kirti.jpa.springdatajpademo.enity.User;
 @Transactional //ability to declaratively control transaction (open transaction, close transaction)
 public class UserDAOService {
 
-	@PersistenceContext //helps n tracking the entity
+	//entityManager was there with JPA and it was cumbersome to use 
+	// and now with spring-data-jpa we have JPARepository - which are easy to handle!!
+	@PersistenceContext //helps in tracking the entity
     private EntityManager entityManager;
 
     public long insert(User user) {
